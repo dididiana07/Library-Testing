@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Balinese&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white nav-title left-margin" href="{{ url_for('index') }}">My Library</a>
+    </nav>
+    <h1>Log in</h1>
+    <div class="card shadow-lg half-size"  style="width: 25rem;">
+        <form method="POST">
+            {{ forms.csrf_token() }}
+            {{ forms.username.label(class="add-margin") }} {{ forms.username(class="full-width add-margin") }}
+            <br>
+            {{ forms.password.label(class="add-margin") }} {{ forms.password(class="full-width add-margin") }}
+            <br>
+            {{ forms.session(class="add-margin") }} {{ forms.session.label }}
+            {{ forms.submit(class="btn btn-dark centered-button add-margin-top") }}
+        </form>
+    </div>
+    <div class="centered-element">
+         <a href="{{url_for('register')}}">Register</a>
+    </div>
+    <p class="current-year">© {{ year }}</p>
+</body>
+</html>

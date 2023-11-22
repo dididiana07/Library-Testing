@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ username.title() }}'s Library</title>
+    <link rel="stylesheet" href="./static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Balinese&display=swap" rel="stylesheet">
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white nav-title left-margin" href="{{ url_for('index') }}">My Library</a>
+         <a class="link-danger nav-item link-underline link-underline-opacity-0 add-padding" href="{{ url_for('logout') }}">Sign Out</a>
+     </nav>
+     <h1>Welcome <span class="red-text">{{ username }}</span> to your library.</h1>
+     <form method="POST">
+         {{ forms.csrf_token() }}
+         <div class="container">
+             <div style="width:100%;margin:auto;" class="books-forms row">
+                 <div class="col">
+                     {{ forms.title.label }} {{ forms.title() }}
+                 </div>
+                 <div class="col">
+                     {{ forms.author.label }} {{ forms.author() }}
+                 </div>
+                 <div class="col">
+                     {{ forms.rate.label }} {{ forms.rate() }}
+                     {{ forms.submit(class="btn btn-dark add-spacing") }}
+                 </div>
+             </div>
+         </div>
+     </form>
+    <hr class="dotted-line">
+    <div class="container books-div">
+        <div style="width:100%;margin:auto;" class="row">
+            {% for book in user_books %}
+            <div class="col-6">
+                    <p class="book-title">{{ book.title }} - {{ book.author }}</p>
+                    <hr>
+                    <p>Rate: {{ '⭐️' * book.rate }}</p>
+                <button class="btn btn-outline-dark"><a class="link-dark link-underline link-underline-opacity-0" href="{{ url_for('delete_book', id_book=book.id) }}">Delete</a></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

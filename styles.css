@@ -1,0 +1,124 @@
+* {
+    margin: 0px;
+    padding:0px;
+}
+
+img {
+    width: 60%;
+    height: auto;
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Noto Serif Balinese', serif;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
+p {
+    margin: 0px;
+    padding:0px;
+}
+/*----------------- CLASS & ID -------------- */
+
+.flex-box {
+    display: flex;
+}
+
+div > div {
+    padding: 10px;
+    width: 50%;
+}
+
+div {
+    padding: 80px;
+}
+
+.sign-in-btn, .register-btn {
+    margin: 5px;
+}
+
+.submit-btn {
+    margin: 50px;
+}
+
+
+.card-body {
+    padding: 50%;
+}
+.centered-body, .current-year{
+       text-align:center;
+}
+
+.current-year {
+    padding: 60px;
+}
+
+.centered-button {
+    margin-top: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+.half-size {
+    margin: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.add-margin {
+    margin: 0px 0px 10px 0px;
+}
+
+.add-margin-top {
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.card-body {
+    width: 100%;
+}
+
+.left-margin {
+    margin-left: 20px;
+}
+
+.red-text {
+    color: red;
+}
+
+.button-to-left {
+    margin-left: 30%;
+    margin-top: 10px;
+}
+
+.centered-element {
+    text-align:center;
+}
+
+.books-forms {
+    width: 100%
+    margin: auto;
+}
+
+.dotted-line {
+    border-top: 10px dotted black;
+}
+
+.add-spacing {
+    margin-left: 50px;
+}
+
+.add-padding {
+    padding: 10px;
+}
+
+.book-title {
+    font-weight: bold;
+}
